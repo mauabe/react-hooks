@@ -6,6 +6,7 @@ import Gallery from './Gallery';
 
 function App(){
   const [userQuery, setUserQuery] = useState('');
+  const [showGallery, setShowGallery] = useState(true);
 
   const updateUserQuery = event => {
     setUserQuery(event.target.value);
@@ -22,6 +23,10 @@ function App(){
     }
   }
 
+  const toggleShowGallery = () => {
+    setShowGallery(!showGallery);
+  }
+
   return (
     <div className="App">
       <h1>Hello Mauricio</h1>
@@ -34,7 +39,10 @@ function App(){
       <hr />
       <Tasks />
       <hr />
-      <Gallery />
+      {
+        showGallery ?  <Gallery /> : null
+      }
+     <button onClick={toggleShowGallery}>{showGallery ? 'Hide' : 'Show'} Gallery </button>
       <hr />
       <Stories />
     </div>
