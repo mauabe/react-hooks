@@ -87,6 +87,7 @@ button {
 
 .completed-list {
   color: grey;
+  text-decoration: line-through;
 }
 
 .delete-task {
